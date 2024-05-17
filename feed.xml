@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-05-17T02:20:42+00:00</updated><id>/feed.xml</id><entry><title type="html">如何配置plantuml</title><link href="/2024/05/17/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEPlantUML.html" rel="alternate" type="text/html" title="如何配置plantuml" /><published>2024-05-17T00:00:00+00:00</published><updated>2024-05-17T00:00:00+00:00</updated><id>/2024/05/17/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEPlantUML</id><content type="html" xml:base="/2024/05/17/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEPlantUML.html"><![CDATA[<h1 id="一安装plantuml">一、安装PlantUML</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> plantuml
+</code></pre></div></div>
+
+<h1 id="二安装插件">二、安装插件</h1>
+
+<ol>
+  <li>编辑 <code class="language-plaintext highlighter-rouge">Gemfile</code> 文件，添加 <code class="language-plaintext highlighter-rouge">jekyll-plantuml</code> 插件</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
+
+<span class="n">gem</span> <span class="s2">"jekyll"</span>
+<span class="n">gem</span> <span class="s2">"kramdown-plantuml"</span>
+
+<span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-feed"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-seo-tag"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<ol>
+  <li>编辑 <code class="language-plaintext highlighter-rouge">_config.yml</code> 文件，添加 <code class="language-plaintext highlighter-rouge">jekyll-plantuml</code> 插件</li>
+</ol>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">authors</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">authors"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">author"</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">posts"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">post"</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">default"</span>
+
+<span class="na">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">kramdown-plantuml"</span>
+</code></pre></div></div>
+
+<h1 id="三使用plantuml">三、使用PlantUML</h1>
+
+<p>在帖子里，用代码块添加PlantUML图表，例如一个简单的泳道图：</p>
+
+<pre><code class="language-plantuml">Cat -&gt; Dog : hello
+Dog -&gt; Cat : hi
+</code></pre>
+
+<p>将上述代码块插入到你的文档里即可。</p>]]></content><author><name>hk</name></author><summary type="html"><![CDATA[一、安装PlantUML]]></summary></entry><entry><title type="html">我来用plantuml画一个hello</title><link href="/2024/05/17/%E6%88%91%E6%9D%A5%E7%94%A8PlantUML%E7%94%BB%E4%B8%80%E4%B8%AAHello.html" rel="alternate" type="text/html" title="我来用plantuml画一个hello" /><published>2024-05-17T00:00:00+00:00</published><updated>2024-05-17T00:00:00+00:00</updated><id>/2024/05/17/%E6%88%91%E6%9D%A5%E7%94%A8PlantUML%E7%94%BB%E4%B8%80%E4%B8%AAHello</id><content type="html" xml:base="/2024/05/17/%E6%88%91%E6%9D%A5%E7%94%A8PlantUML%E7%94%BB%E4%B8%80%E4%B8%AAHello.html"><![CDATA[<pre><code class="language-plantuml">@startuml
+participant Alice
+participant "The **Famous** Bob" as Bob
+
+Alice -&gt; Bob : hello --there--
+... Some ~~long delay~~ ...
+Bob -&gt; Alice : ok
+note left
+  This is **bold**
+  This is //italics//
+  This is ""monospaced""
+  This is --stroked--
+  This is __underlined__
+  This is ~~waved~~
+end note
+
+Alice -&gt; Bob : A //well formatted// message
+note right of Alice
+ This is &lt;back:cadetblue&gt;&lt;size:18&gt;displayed&lt;/size&gt;&lt;/back&gt;
+ __left of__ Alice.
+end note
+note left of Bob
+ &lt;u:red&gt;This&lt;/u&gt; is &lt;color #118888&gt;displayed&lt;/color&gt;
+ **&lt;color purple&gt;left of&lt;/color&gt; &lt;s:red&gt;Alice&lt;/strike&gt; Bob**.
+end note
+note over Alice, Bob
+ &lt;w:#FF33FF&gt;This is hosted&lt;/w&gt; by &lt;img sourceforge.jpg&gt;
+end note
+@enduml
+
+</code></pre>]]></content><author><name>hk</name></author><summary type="html"><![CDATA[```plantuml @startuml participant Alice participant “The Famous Bob” as Bob]]></summary></entry><entry><title type="html">这是来自网络的一张图</title><link href="/2024/05/17/%E8%BF%99%E6%98%AF%E6%9D%A5%E8%87%AA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E5%BC%A0%E5%9B%BE.html" rel="alternate" type="text/html" title="这是来自网络的一张图" /><published>2024-05-17T00:00:00+00:00</published><updated>2024-05-17T00:00:00+00:00</updated><id>/2024/05/17/%E8%BF%99%E6%98%AF%E6%9D%A5%E8%87%AA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E5%BC%A0%E5%9B%BE</id><content type="html" xml:base="/2024/05/17/%E8%BF%99%E6%98%AF%E6%9D%A5%E8%87%AA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E5%BC%A0%E5%9B%BE.html"><![CDATA[<p><img src="//www.plantuml.com/plantuml/png/SoWkIImgAStDuL8ioKZDJLN8JIn9BSfCv7BAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1gWK0" alt="" /></p>
+
+<pre><code class="language-C">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    int i;
+    for (i = 0; i &lt; 100; i++)
+    {
+        printf("Hello, World!\n");
+    }
+    return 0;
+}
+</code></pre>
+
+<pre><code class="language-plantuml">
+</code></pre>
+
+<p>点击连结打开在线编辑器
+<a href="https://gitpod.io#https://github.com/thiswind/server_load_demo">打开在线编辑器</a></p>]]></content><author><name>hk</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">用plantuml画图</title><link href="/2024/05/16/%E7%94%A8PlantUML%E7%94%BB%E5%9B%BE.html" rel="alternate" type="text/html" title="用plantuml画图" /><published>2024-05-16T00:00:00+00:00</published><updated>2024-05-16T00:00:00+00:00</updated><id>/2024/05/16/%E7%94%A8PlantUML%E7%94%BB%E5%9B%BE</id><content type="html" xml:base="/2024/05/16/%E7%94%A8PlantUML%E7%94%BB%E5%9B%BE.html"><![CDATA[<h1 id="2024-年-5-月-16-日用plantuml画图">2024 年 5 月 16 日，用PlantUML画图</h1>
+
+<pre><code class="language-plantuml">a --&gt; b
+</code></pre>]]></content><author><name>hk</name></author><summary type="html"><![CDATA[2024 年 5 月 16 日，用PlantUML画图]]></summary></entry><entry><title type="html">我来写一篇</title><link href="/2024/05/10/%E6%88%91%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87.html" rel="alternate" type="text/html" title="我来写一篇" /><published>2024-05-10T00:00:00+00:00</published><updated>2024-05-10T00:00:00+00:00</updated><id>/2024/05/10/%E6%88%91%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87</id><content type="html" xml:base="/2024/05/10/%E6%88%91%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87.html"><![CDATA[<p>2024年4月11日，蔡冠深文化交流中心揭牌仪式在云南大学东陆校区举行。全国政协常委、香港中华总商会会长、粤港澳大湾区企业家联盟主席、香港新华集团主席蔡冠深和云南大学党委书记周学斌共同为“蔡冠深文化交流中心”揭牌。副校长廖炼忠主持揭牌仪式。</p>]]></content><author><name>hk</name></author><summary type="html"><![CDATA[2024年4月11日，蔡冠深文化交流中心揭牌仪式在云南大学东陆校区举行。全国政协常委、香港中华总商会会长、粤港澳大湾区企业家联盟主席、香港新华集团主席蔡冠深和云南大学党委书记周学斌共同为“蔡冠深文化交流中心”揭牌。副校长廖炼忠主持揭牌仪式。]]></summary></entry><entry><title type="html">Copilot很好用</title><link href="/2024/04/16/Copilot%E5%BE%88%E5%A5%BD%E7%94%A8.html" rel="alternate" type="text/html" title="Copilot很好用" /><published>2024-04-16T00:00:00+00:00</published><updated>2024-04-16T00:00:00+00:00</updated><id>/2024/04/16/Copilot%E5%BE%88%E5%A5%BD%E7%94%A8</id><content type="html" xml:base="/2024/04/16/Copilot%E5%BE%88%E5%A5%BD%E7%94%A8.html"><![CDATA[<p>one 1 壹 yi
+two 2 贰 er
+three 3 叁 san
+four 4 肆 si
+five 5 伍 wu
+six 6 陆 liu
+seven 7 柒 qi
+eight 8 捌 ba</p>]]></content><author><name>hk</name></author><summary type="html"><![CDATA[one 1 壹 yi two 2 贰 er three 3 叁 san four 4 肆 si five 5 伍 wu six 6 陆 liu seven 7 柒 qi eight 8 捌 ba]]></summary></entry><entry><title type="html">Kiwifruit</title><link href="/2018/08/22/kiwifruit.html" rel="alternate" type="text/html" title="Kiwifruit" /><published>2018-08-22T00:00:00+00:00</published><updated>2018-08-22T00:00:00+00:00</updated><id>/2018/08/22/kiwifruit</id><content type="html" xml:base="/2018/08/22/kiwifruit.html"><![CDATA[<p>Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the
+edible berry of several species of woody vines in the genus Actinidia.</p>
+
+<p>The most common cultivar group of kiwifruit is oval, about the size of
+a large hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm
+(1.8–2.2 in) in diameter). It has a fibrous, dull greenish-brown skin
+and bright green or golden flesh with rows of tiny, black, edible
+seeds. The fruit has a soft texture, with a sweet and unique flavor.</p>]]></content><author><name>ted</name></author><summary type="html"><![CDATA[Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible berry of several species of woody vines in the genus Actinidia.]]></summary></entry><entry><title type="html">Apples</title><link href="/2018/08/21/apples.html" rel="alternate" type="text/html" title="Apples" /><published>2018-08-21T00:00:00+00:00</published><updated>2018-08-21T00:00:00+00:00</updated><id>/2018/08/21/apples</id><content type="html" xml:base="/2018/08/21/apples.html"><![CDATA[<p>An apple is a sweet, edible fruit produced by an apple tree.</p>
+
+<p>Apple trees are cultivated worldwide, and are the most widely grown
+species in the genus Malus. The tree originated in Central Asia, where
+its wild ancestor, Malus sieversii, is still found today. Apples have
+been grown for thousands of years in Asia and Europe, and were brought
+to North America by European colonists.</p>]]></content><author><name>jill</name></author><summary type="html"><![CDATA[An apple is a sweet, edible fruit produced by an apple tree.]]></summary></entry><entry><title type="html">Bananas</title><link href="/2018/08/20/bananas.html" rel="alternate" type="text/html" title="Bananas" /><published>2018-08-20T00:00:00+00:00</published><updated>2018-08-20T00:00:00+00:00</updated><id>/2018/08/20/bananas</id><content type="html" xml:base="/2018/08/20/bananas.html"><![CDATA[<p>A banana is an edible fruit – botanically a berry – produced by several
+kinds of large herbaceous flowering plants in the genus Musa.</p>
+
+<p>In some countries, bananas used for cooking may be called “plantains”,
+distinguishing them from dessert bananas. The fruit is variable in size,
+color, and firmness, but is usually elongated and curved, with soft
+flesh rich in starch covered with a rind, which may be green, yellow,
+red, purple, or brown when ripe.</p>]]></content><author><name>jill</name></author><summary type="html"><![CDATA[A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.]]></summary></entry></feed>

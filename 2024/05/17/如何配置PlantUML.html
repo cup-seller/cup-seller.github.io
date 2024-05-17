@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>如何配置plantuml</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <nav>
+    
+        <a href="/" 
+            
+        >
+            Home
+        </a>
+    
+        <a href="/about.html" 
+            
+        >
+            About
+        </a>
+    
+        <a href="/blog.html" 
+            
+        >
+            Blog
+        </a>
+    
+        <a href="/staff.html" 
+            
+        >
+            Staff
+        </a>
+    
+</nav>
+
+    page.url is /2024/05/17/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEPlantUML.html
+
+    <h1>如何配置plantuml</h1>
+
+<p>
+  17 May 2024
+  
+  
+    - <a href="/authors/hukuang.html">Kuang Hu</a>
+  
+</p>
+
+<h1 id="一安装plantuml">一、安装PlantUML</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> plantuml
+</code></pre></div></div>
+
+<h1 id="二安装插件">二、安装插件</h1>
+
+<ol>
+  <li>编辑 <code class="language-plaintext highlighter-rouge">Gemfile</code> 文件，添加 <code class="language-plaintext highlighter-rouge">jekyll-plantuml</code> 插件</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
+
+<span class="n">gem</span> <span class="s2">"jekyll"</span>
+<span class="n">gem</span> <span class="s2">"kramdown-plantuml"</span>
+
+<span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-feed"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-seo-tag"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<ol>
+  <li>编辑 <code class="language-plaintext highlighter-rouge">_config.yml</code> 文件，添加 <code class="language-plaintext highlighter-rouge">jekyll-plantuml</code> 插件</li>
+</ol>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">authors</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">authors"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">author"</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">posts"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">post"</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">default"</span>
+
+<span class="na">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">kramdown-plantuml"</span>
+</code></pre></div></div>
+
+<h1 id="三使用plantuml">三、使用PlantUML</h1>
+
+<p>在帖子里，用代码块添加PlantUML图表，例如一个简单的泳道图：</p>
+
+<pre><code class="language-plantuml">Cat -&gt; Dog : hello
+Dog -&gt; Cat : hi
+</code></pre>
+
+<p>将上述代码块插入到你的文档里即可。</p>
+
+  </body>
+</html>

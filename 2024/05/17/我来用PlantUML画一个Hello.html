@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>我来用plantuml画一个hello</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <nav>
+    
+        <a href="/" 
+            
+        >
+            Home
+        </a>
+    
+        <a href="/about.html" 
+            
+        >
+            About
+        </a>
+    
+        <a href="/blog.html" 
+            
+        >
+            Blog
+        </a>
+    
+        <a href="/staff.html" 
+            
+        >
+            Staff
+        </a>
+    
+</nav>
+
+    page.url is /2024/05/17/%E6%88%91%E6%9D%A5%E7%94%A8PlantUML%E7%94%BB%E4%B8%80%E4%B8%AAHello.html
+
+    <h1>我来用plantuml画一个hello</h1>
+
+<p>
+  17 May 2024
+  
+  
+    - <a href="/authors/hukuang.html">Kuang Hu</a>
+  
+</p>
+
+<pre><code class="language-plantuml">@startuml
+participant Alice
+participant "The **Famous** Bob" as Bob
+
+Alice -&gt; Bob : hello --there--
+... Some ~~long delay~~ ...
+Bob -&gt; Alice : ok
+note left
+  This is **bold**
+  This is //italics//
+  This is ""monospaced""
+  This is --stroked--
+  This is __underlined__
+  This is ~~waved~~
+end note
+
+Alice -&gt; Bob : A //well formatted// message
+note right of Alice
+ This is &lt;back:cadetblue&gt;&lt;size:18&gt;displayed&lt;/size&gt;&lt;/back&gt;
+ __left of__ Alice.
+end note
+note left of Bob
+ &lt;u:red&gt;This&lt;/u&gt; is &lt;color #118888&gt;displayed&lt;/color&gt;
+ **&lt;color purple&gt;left of&lt;/color&gt; &lt;s:red&gt;Alice&lt;/strike&gt; Bob**.
+end note
+note over Alice, Bob
+ &lt;w:#FF33FF&gt;This is hosted&lt;/w&gt; by &lt;img sourceforge.jpg&gt;
+end note
+@enduml
+
+</code></pre>
+
+
+  </body>
+</html>
